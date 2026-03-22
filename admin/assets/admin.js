@@ -5,6 +5,12 @@ const statusNode = document.getElementById('status');
 const bootstrapResult = document.getElementById('bootstrap-result');
 const loggedUser = document.getElementById('logged-user');
 
+const API_BASE = 'https://backend-api-yl2u.onrender.com';
+
+function apiUrl(path) {
+  return `${API_BASE}${path}`;
+}
+
 let dashboardCache = null;
 
 function setAuthStatus(message) {
@@ -32,7 +38,7 @@ function authHeaders() {
 }
 
 async function authApi(path, method = 'GET', body) {
-  const response = await fetch(`/api/auth${path}`, {
+  const response = await fetch(apiUrl(`/api/auth${path}`), {
     method,
     headers: {
       'Content-Type': 'application/json',
@@ -49,7 +55,7 @@ async function authApi(path, method = 'GET', body) {
 }
 
 async function adminApi(path, method = 'GET', body) {
-  const response = await fetch(`/api/admin${path}`, {
+  const response = await fetch(apiUrl(`/api/admin${path}`), {
     method,
     headers: {
       'Content-Type': 'application/json',

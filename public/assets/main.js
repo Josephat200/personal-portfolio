@@ -7,6 +7,12 @@ const testimonialList = document.getElementById('testimonial-list');
 const contactForm = document.getElementById('contact-form');
 const contactStatus = document.getElementById('contact-status');
 
+const API_BASE = 'https://backend-api-yl2u.onrender.com';
+
+function apiUrl(path) {
+  return `${API_BASE}${path}`;
+}
+
 const defaultServices = [
   { name: 'Custom Web Application Development', description: 'Business web platforms built with modern frontend and backend architecture.' },
   { name: 'Backend API Engineering', description: 'Secure and scalable APIs with authentication, validation, and integration support.' },
@@ -248,7 +254,7 @@ async function loadContent() {
   let settings = {};
 
   try {
-    const response = await fetch('/api/site/content');
+    const response = await fetch(apiUrl('/api/site/content'));
     const data = await response.json();
 
     if (response.ok) {
@@ -300,7 +306,7 @@ contactForm.addEventListener('submit', async (event) => {
   const payload = Object.fromEntries(new FormData(contactForm).entries());
 
   try {
-    const response = await fetch('/api/site/contact', {
+    const response = await fetch(apiUrl('/api/site/contact'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
