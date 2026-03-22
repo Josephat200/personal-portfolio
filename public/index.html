@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Josphat Omondi | Professional Software Engineer - Kutus-Kirinyaga</title>
+    <meta
+      name="description"
+      content="Expert software engineer offering full-stack web development, backend systems, database design, mobile apps, and custom software solutions in Kutus-Kirinyaga."
+    />
+    <link rel="icon" type="image/png" href="/public/assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/assets/main.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <nav class="nav container">
+        <div class="brand">
+          <img src="/public/assets/logo.png" alt="Josphat Omondi logo" class="logo" />
+          <span>Josphat Omondi</span>
+        </div>
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#voices">Client Voices</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container hero-pane">
+        <div class="hero-badge">Software Engineering Excellence</div>
+        <h1 id="home-title" class="hero-title">Josphat Omondi</h1>
+        <p id="home-body" class="hero-subtitle">
+          Building production-grade software systems for startups, SMEs, and organizations.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" id="home-cta" href="#contact">Start Your Project</a>
+          <a class="btn btn-secondary" href="#portfolio">View Portfolio</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section container">
+        <div class="section-head">
+          <h2>About Me</h2>
+          <p class="lead">Professional software engineer based in Kutus-Kirinyaga</p>
+        </div>
+        <p id="about-body" class="about-text">
+          I design and deliver complete software solutions from planning to deployment. My work focuses on
+          reliability, clean architecture, and business value.
+        </p>
+      </section>
+
+      <section id="services" class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Software Engineering Services</h2>
+            <p class="lead">Comprehensive technical services across product, platform, and infrastructure</p>
+          </div>
+          <div id="services-list" class="grid cards-3"></div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section container">
+        <div class="section-head">
+          <h2>Portfolio</h2>
+          <p class="lead">You can view every project in this portfolio with category filters below</p>
+        </div>
+        <div class="portfolio-toolbar">
+          <p id="portfolio-meta" class="portfolio-meta"></p>
+          <div id="portfolio-filters" class="chip-row"></div>
+        </div>
+        <div id="portfolio-list" class="grid cards-2"></div>
+      </section>
+
+      <section id="voices" class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>What Our Clients Say</h2>
+            <p class="lead">Client outcomes and satisfaction highlights</p>
+          </div>
+          <div id="voices-list" class="grid cards-3"></div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="section container">
+        <div class="section-head">
+          <h2>Detailed Testimonials</h2>
+          <p class="lead">Long-form feedback from customers and teams I have supported</p>
+        </div>
+        <div id="testimonial-list" class="grid cards-2"></div>
+      </section>
+
+      <section id="contact" class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Get In Touch</h2>
+            <p class="lead">Email, phone, WhatsApp, or visit the office in Kutus</p>
+          </div>
+
+          <div class="contact-wrap">
+            <div class="contact-info card">
+              <h3>Contact Channels</h3>
+              <p>Email: <a id="contact-email-link" href="mailto:omondijosephat24@gmail.com">omondijosephat24@gmail.com</a></p>
+              <p>Phone: <a id="contact-phone-link" href="tel:+254797670230">+254 797 670 230</a></p>
+              <p>WhatsApp: <a id="contact-whatsapp-link" href="https://wa.me/254797670230" target="_blank" rel="noreferrer">Chat on WhatsApp</a></p>
+              <p>Office: <span id="office-location">Kutus, Kirinyaga County, Kenya</span></p>
+            </div>
+
+            <form id="contact-form" class="contact-form card">
+              <h3>Send a Message</h3>
+              <label>
+                Full Name
+                <input required name="name" type="text" placeholder="Your name" />
+              </label>
+              <label>
+                Email
+                <input required name="email" type="email" placeholder="you@example.com" />
+              </label>
+              <label>
+                Phone
+                <input name="phone" type="tel" placeholder="0797670230" />
+              </label>
+              <label>
+                Project Details
+                <textarea required name="message" rows="6" placeholder="Tell me your goals, timeline, and expected deliverables."></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+              <p id="contact-status" class="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">
+            <img src="/public/assets/logo.png" alt="Josphat Omondi logo" class="logo" />
+            <span>Josphat Omondi</span>
+          </div>
+          <p class="footer-copy">
+            <span id="footer-tagline">Professional software engineering services with practical delivery, transparent communication,
+            and long-term support.</span>
+          </p>
+        </div>
+
+        <div>
+          <h4>Site Links</h4>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#voices">Client Voices</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div>
+          <h4>Top Services</h4>
+          <a href="#services">Web App Development</a>
+          <a href="#services">Backend APIs</a>
+          <a href="#services">Database Engineering</a>
+          <a href="#services">Cloud Deployment</a>
+          <a href="#services">Optimization and Security</a>
+        </div>
+
+        <div>
+          <h4>Reach Out</h4>
+          <p><a id="footer-email-link" href="mailto:omondijosephat24@gmail.com">omondijosephat24@gmail.com</a></p>
+          <p><a id="footer-phone-link" href="tel:+254797670230">+254 797 670 230</a></p>
+          <p><a id="footer-whatsapp-link" href="https://wa.me/254797670230" target="_blank" rel="noreferrer">WhatsApp</a></p>
+          <p id="footer-location">Kutus, Kirinyaga County</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Josphat Omondi. All rights reserved.</p>
+        <p>Software Engineer | Kutus-Kirinyaga, Kenya</p>
+      </div>
+    </footer>
+
+    <script src="/public/assets/main.js"></script>
+  </body>
+</html>

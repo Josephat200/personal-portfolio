@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin System | Josphat Omondi</title>
+    <link rel="icon" type="image/png" href="/admin/assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/admin/assets/admin.css" />
+  </head>
+  <body>
+    <section id="auth-screen" class="auth-screen">
+      <div class="auth-card">
+        <div class="brand-row">
+          <img src="/admin/assets/logo.png" alt="logo" class="logo" />
+          <div>
+            <h1>Admin Sign In</h1>
+            <p>Secure access to website management</p>
+          </div>
+        </div>
+
+        <form id="login-form" class="form-grid">
+          <input name="username" placeholder="Username" required />
+          <input name="password" type="password" placeholder="Password" required />
+          <button type="submit">Sign In</button>
+        </form>
+
+        <div class="auth-actions">
+          <button id="bootstrap-btn" type="button" class="ghost">Generate First Admin Login</button>
+        </div>
+
+        <div id="bootstrap-result" class="bootstrap-result"></div>
+        <p id="auth-status" class="status"></p>
+      </div>
+    </section>
+
+    <section id="admin-app" class="admin-app hidden">
+      <header class="topbar">
+        <div class="brand-row">
+          <img src="/admin/assets/logo.png" alt="logo" class="logo" />
+          <div>
+            <h1>Admin Dashboard</h1>
+            <p>Content, settings, users, and operations</p>
+          </div>
+        </div>
+        <div class="top-actions">
+          <span id="logged-user" class="chip"></span>
+          <button id="logout-btn" class="danger" type="button">Logout</button>
+        </div>
+      </header>
+
+      <div class="admin-layout">
+        <aside class="sidebar">
+          <button class="nav-btn active" data-section="overview">Overview</button>
+          <button class="nav-btn" data-section="content">Content</button>
+          <button class="nav-btn" data-section="messages">Messages</button>
+          <button class="nav-btn" data-section="settings">Settings</button>
+        </aside>
+
+        <main class="main-pane">
+          <section class="admin-section" id="section-overview">
+            <h2>System Overview</h2>
+            <div id="overview-cards" class="overview-grid"></div>
+          </section>
+
+          <section class="admin-section hidden" id="section-content">
+            <h2>Website Content</h2>
+
+            <article class="panel">
+              <h3>Sections</h3>
+              <form id="section-form" class="form-grid">
+                <input name="slug" placeholder="slug: home/about" required />
+                <input name="title" placeholder="title" required />
+                <input name="subtitle" placeholder="subtitle" />
+                <input name="cta_text" placeholder="cta text" />
+                <input name="cta_link" placeholder="cta link" />
+                <textarea name="body" placeholder="body" rows="3"></textarea>
+                <button type="submit">Save Section</button>
+              </form>
+              <div id="sections-admin" class="list"></div>
+            </article>
+
+            <article class="panel">
+              <h3>Services</h3>
+              <form id="service-form" class="form-grid">
+                <input name="name" placeholder="service name" required />
+                <input name="icon" placeholder="icon" />
+                <input name="price_note" placeholder="price note" />
+                <input name="display_order" type="number" placeholder="display order" value="0" />
+                <textarea name="description" placeholder="description" rows="3"></textarea>
+                <button type="submit">Add Service</button>
+              </form>
+              <div id="services-admin" class="list"></div>
+            </article>
+
+            <article class="panel">
+              <h3>Portfolio</h3>
+              <form id="portfolio-form" class="form-grid">
+                <input name="title" placeholder="project title" required />
+                <input name="category" placeholder="category" />
+                <input name="image_url" placeholder="image url" />
+                <input name="project_url" placeholder="project url" />
+                <input name="display_order" type="number" placeholder="display order" value="0" />
+                <textarea name="summary" placeholder="summary" rows="3"></textarea>
+                <button type="submit">Add Portfolio Item</button>
+              </form>
+              <div id="portfolio-admin" class="list"></div>
+            </article>
+
+            <article class="panel">
+              <h3>Testimonials</h3>
+              <form id="testimonial-form" class="form-grid">
+                <input name="client_name" placeholder="client name" required />
+                <input name="company" placeholder="company" />
+                <input name="rating" type="number" min="1" max="5" value="5" />
+                <input name="display_order" type="number" placeholder="display order" value="0" />
+                <textarea name="quote" placeholder="quote" rows="3" required></textarea>
+                <button type="submit">Add Testimonial</button>
+              </form>
+              <div id="testimonials-admin" class="list"></div>
+            </article>
+
+            <article class="panel">
+              <h3>Terms and Policies</h3>
+              <form id="term-form" class="form-grid">
+                <input name="title" placeholder="title" required />
+                <input name="display_order" type="number" placeholder="display order" value="0" />
+                <textarea name="body" placeholder="policy text" rows="3" required></textarea>
+                <button type="submit">Add Term</button>
+              </form>
+              <div id="terms-admin" class="list"></div>
+            </article>
+          </section>
+
+          <section class="admin-section hidden" id="section-messages">
+            <h2>User Messages</h2>
+            <article class="panel">
+              <div id="messages-admin" class="list"></div>
+            </article>
+          </section>
+
+          <section class="admin-section hidden" id="section-settings">
+            <h2>Admin Settings</h2>
+
+            <article class="panel">
+              <h3>Profile and Login Credentials</h3>
+              <form id="account-form" class="form-grid">
+                <input name="username" placeholder="new username (optional)" />
+                <input name="current_password" type="password" placeholder="current password (required to change password)" />
+                <input name="new_password" type="password" placeholder="new password" />
+                <button type="submit">Update Login Details</button>
+              </form>
+            </article>
+
+            <article class="panel">
+              <h3>Create Admin User</h3>
+              <form id="admin-user-form" class="form-grid">
+                <input name="username" placeholder="new admin username" required />
+                <input name="password" type="password" placeholder="new admin password" required />
+                <button type="submit">Create Admin</button>
+              </form>
+              <div id="admin-users-list" class="list"></div>
+            </article>
+
+            <article class="panel">
+              <h3>Public Site Settings</h3>
+              <form id="setting-form" class="form-grid">
+                <select name="key" required>
+                  <option value="contact_email">contact_email</option>
+                  <option value="contact_phone">contact_phone</option>
+                  <option value="contact_whatsapp">contact_whatsapp</option>
+                  <option value="office_location">office_location</option>
+                  <option value="footer_tagline">footer_tagline</option>
+                </select>
+                <textarea name="value" placeholder="setting value" rows="3" required></textarea>
+                <button type="submit">Save Setting</button>
+              </form>
+              <div id="settings-admin" class="list"></div>
+            </article>
+          </section>
+
+          <p id="status" class="status"></p>
+        </main>
+      </div>
+    </section>
+
+    <script src="/admin/assets/admin.js"></script>
+  </body>
+</html>
