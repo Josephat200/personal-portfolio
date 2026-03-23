@@ -7,7 +7,7 @@ const testimonialList = document.getElementById('testimonial-list');
 const contactForm = document.getElementById('contact-form');
 const contactStatus = document.getElementById('contact-status');
 
-const API_BASE = 'https://backend-api-yl2u.onrender.com';
+const API_BASE = 'https://personal-portfolio-api.onrender.com';
 
 function apiUrl(path) {
   return `${API_BASE}${path}`;

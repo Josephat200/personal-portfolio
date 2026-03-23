@@ -5,7 +5,7 @@ const statusNode = document.getElementById('status');
 const bootstrapResult = document.getElementById('bootstrap-result');
 const loggedUser = document.getElementById('logged-user');
 
-const API_BASE = 'https://backend-api-yl2u.onrender.com';
+const API_BASE = 'https://personal-portfolio-api.onrender.com';
 
 function apiUrl(path) {
   return `${API_BASE}${path}`;
