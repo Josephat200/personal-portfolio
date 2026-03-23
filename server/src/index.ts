@@ -20,6 +20,8 @@ app.use('/api/auth', authRouter);
 app.use('/api/admin', adminRouter);
 
 const root = path.resolve(__dirname, '..', '..');
+// Serve public assets at root so index.html relative paths resolve in production.
+app.use(express.static(path.join(root, 'public')));
 app.use('/public', express.static(path.join(root, 'public')));
 app.use('/admin', express.static(path.join(root, 'admin')));
 app.get('/', (_req, res) => res.sendFile(path.join(root, 'public', 'index.html')));
